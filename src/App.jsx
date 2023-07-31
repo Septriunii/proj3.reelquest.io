@@ -31,7 +31,7 @@ const App = () => {
 
   return (
     <div className="app">
-      <h1 className="" onClick={handleRestart}>
+      <h1 className="cursor-pointer text-6xl font-bold" onClick={handleRestart}>
         ReelQuest
       </h1>
       <div className="search">
@@ -57,7 +57,7 @@ const App = () => {
           <h2>No movies found</h2>
         </div>
       ) : (
-        <div className="description">
+        <div className="description mt-20 text-lg w-2/3">
           <p>
             Welcome to ReelQuest! Your ultimate destination for finding movies
             of all genres and eras. Search our vast database to discover the
