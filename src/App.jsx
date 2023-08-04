@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./App.css";
 import SearchIcon from "./search.svg";
 import MovieCard from "./components/MovieCard";
+import bg from "./assets/bg.png";
 
 const API_URL = "http://www.omdbapi.com?apikey=fa65a795";
 
@@ -31,10 +32,18 @@ const App = () => {
 
   return (
     <div className="app">
-      <h1 className="cursor-pointer text-6xl font-bold" onClick={handleRestart}>
+      <img
+        src={bg}
+        className="absolute -z-50 top-5 md:top-10 lg:top-0"
+        alt=""
+      />
+      <h1
+        className="cursor-pointer text-3xl md:text-4xl lg:text-6xl font-bold text-orange-600 text-opacity-90 "
+        onClick={handleRestart}
+      >
         ReelQuest
       </h1>
-      <div className="search">
+      <div className="search md:w-[80%] lg:w-[70%] ">
         <input
           placeholder="Search for movies"
           value={searchTerm}
@@ -53,16 +62,18 @@ const App = () => {
           ))}
         </div>
       ) : searchPerformed ? (
-        <div className="empty">
+        <div className="empty text-white text-opacity-50 text-center">
           <h2>No movies found</h2>
         </div>
       ) : (
-        <div className="description mt-20 text-lg w-2/3">
+        <div className="description mt-7 md:mt-14 lg:mt-20 text-base lg:text-lg w-2/3 text-white text-opacity-50 text-center">
           <p>
-            Welcome to ReelQuest! Your ultimate destination for finding movies
-            of all genres and eras. Search our vast database to discover the
-            perfect film for your next cinematic adventure. Get ready to embark
-            on a thrilling movie hunt like never before!
+            Welcome to
+            <span className="text-orange-600"> ReelQuest</span>! Your ultimate
+            destination for finding movies of all genres and eras. Search our
+            vast database to discover the perfect film for your next cinematic
+            adventure. Get ready to embark on a thrilling movie hunt like never
+            before!
           </p>
         </div>
       )}
